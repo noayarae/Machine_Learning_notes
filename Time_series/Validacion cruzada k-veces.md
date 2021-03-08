@@ -19,8 +19,12 @@ ___Continua___
 ***Continua***
 
 ##### Validación progresiva
+Se debe establecer dos parametros:
+- El mínimo número de observaciones. Determina el mínimo número de oservaciones en el modelo de entrenamiento.
+- La ventana de desplazamiento o expansión. Determina si el modelo será entrenado en los datos disponibles o solo en las obsevaciones más recientes.
 
-
+See here:
+https://machinelearningmastery.com/backtest-machine-learning-models-time-series-forecasting/
 
 
 
