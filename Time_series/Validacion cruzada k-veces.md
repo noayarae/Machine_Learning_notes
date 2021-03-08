@@ -12,8 +12,16 @@ En el pronóstico de series de tiempo, esta evaluación de modelos sobre datos h
 A continuacion se describen tres metodos de backtest de evaluacion de series de tiempo en ML: Separacion Train-Test, multiple separacion Train-Test, y validacion progresiva.
 ##### Separacion Train-Test
 Esta saparacion de serie de tiempo consiste en establecer un punto de particion de la serie para obtener dos series, la primera serie de entrenamiento (train) antes del punto de particion y la segunda serie de evaluacion (test) despues del punto. Segun la cantidad de observaciones (logitud de la serie) la separacion puede ser de 50-50, 60-40, 70-30 y otro.
-##### multiple separacion Train-Test
+##### Multiple separacion Train-Test
 Consiste en repetir el proceso de separacion de la serie varias veces. La multiple separacion de la serie en Train-test, permitira tener vario pares train-test por tanto hacer el modelo de ML mas robusto.
+Esta múltiple separación puede hacerse manualmente, repitiendo la separación de la serie en varios puntos; sin embargo, la librería scikit-learn provee una función para esto.
+___Continua___
+***Continua***
+
+##### Validación progresiva
+
+
+
 
 
 
