@@ -1,19 +1,19 @@
 ## Validacion cruzada k-fold en Series de Tiempo
-Los metodos potentes y rapidos que usan los algoritmos de ML son usualmente la particion de la base de dataos en dos: entrenamiento (train) y evaluacion (test). Sin embargo, estos metodos no puedes ser aplicados en series de tiempo, debido que estos criterios ignoran la secuencia temporal, el cual es la caracteristica mas importante de las series de tiempo.
+Los criterios para calibración y validación que usan los algoritmos de ML son usualmente la partición de la base de datos en dos: entrenamiento (train) y evaluación (test). Sin embargo, estos métodos no pueden ser aplicados en series de tiempo debido que estos criterios ignoran la secuencia temporal, lo cual es una característica importante de las series de tiempo. 
 
-En series de tiempo los modelos de ML emplean tecnicas de evaluacion llamados backtesting or hindcasting
+En series de tiempo los modelos de ML emplean técnicas de separación de datos llamados backtesting or hindcasting
 
-### Por que los metodos clasicos de evaluacion de un modelo ML no son aplicables en Series de Tiempo?
-Los metodos clasicos de evaluacion de un modelo de ML asume que las observaciones son independientes del tiempo. Esta consideracion no es cierta en series de tiempo.
-En series de tiempo no se pueden aleatoriamente separar las observaciones en observaciones de entrenamiento y evaluacion, sino debemos considerar separaciones de observaciones manteniendo la secuencia de las observaciones.
+### Por que los métodos clásicos de evaluación (separación) de un modelo ML no son aplicables en Series de Tiempo?
+Los métodos clásicos de evaluación de un modelo de ML asume que las observaciones son independientes del tiempo. Esta consideracion no es cierta en series de tiempo.
+En series de tiempo no se pueden aleatoriamente separar las observaciones en observaciones de entrenamiento y evaluacion, sino debemos considerar separaciones de observaciones manteniendo la secuencia de las observaciones en el tiempo.
 
 En el pronóstico de series de tiempo, esta evaluación de modelos sobre datos históricos se denomina backtesting. En algunos dominios de series de tiempo, como la meteorología, esto se denomina predicción retrospectiva, en lugar de predicción.
 
-A continuacion se describen tres metodos de backtest de evaluacion de series de tiempo en ML: Separacion Train-Test, multiple separacion Train-Test, y validacion progresiva.
-#### Separacion Train-Test (Train-Test split)
-Esta saparacion de serie de tiempo consiste en establecer un punto de particion de la serie para obtener dos series, la primera serie de entrenamiento (train) antes del punto de particion y la segunda serie de evaluacion (test) despues del punto. Segun la cantidad de observaciones (logitud de la serie) la separacion puede ser de 50-50, 60-40, 70-30 y otro.
-#### Multiple separacion Train-Test (Multiple Train-Test splits)
-Consiste en repetir el proceso de separacion de la serie varias veces. La multiple separacion de la serie en Train-test, permitira tener vario pares train-test por tanto hacer el modelo de ML mas robusto.
+A continuación se describen tres métodos de backtest de evaluación de series de tiempo en ML: Separación Train-Test, múltiple separación Train-Test, y validación progresiva.
+#### Separación Train-Test (Train-Test split)
+Esta saparación de serie de tiempo consiste en establecer un punto de partición de la serie para obtener dos series, la primera serie de entrenamiento (train) antes del punto de partición y la segunda serie de evaluación (test) después del punto. Segun la cantidad de observaciones (logitud de la serie) la separación puede ser de 50-50, 60-40, 70-30 y otro.
+#### Múltiple separación Train-Test (Múltiple Train-Test splits)
+Consiste en repetir el proceso de separación de la serie varias veces. La múltiple separación de la serie en Train-test, permitirá tener varios pares train-test por tanto hacer el modelo de ML mas robusto.
 Esta múltiple separación puede hacerse manualmente, repitiendo la separación de la serie en varios puntos; sin embargo, la librería scikit-learn provee una función para esto.
 ___Continua___
 ***Continua***
