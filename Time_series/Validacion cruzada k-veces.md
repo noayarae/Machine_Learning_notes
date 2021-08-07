@@ -5,7 +5,7 @@ En series de tiempo los modelos de ML emplean técnicas de separación de datos 
 
 ### Por que los métodos clásicos de evaluación (separación) de un modelo ML no son aplicables en Series de Tiempo?
 Los métodos clásicos de evaluación de un modelo de ML asume que las observaciones son independientes del tiempo. Esta consideracion no es cierta en series de tiempo.
-En series de tiempo no se pueden aleatoriamente separar las observaciones en observaciones de entrenamiento y evaluacion, sino debemos considerar separaciones de observaciones manteniendo la secuencia de las observaciones en el tiempo.
+En series de tiempo no se pueden aleatoriamente separar la data en observaciones de entrenamiento y evaluacion, sino debemos considerar separaciones de observaciones manteniendo la secuencia de las observaciones en el tiempo.
 
 En el pronóstico de series de tiempo, esta evaluación de modelos sobre datos históricos se denomina backtesting. En algunos dominios de series de tiempo, como la meteorología, esto se denomina predicción retrospectiva, en lugar de predicción.
 
