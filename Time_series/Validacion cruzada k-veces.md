@@ -1,7 +1,7 @@
 ## Validacion cruzada k-fold en Series de Tiempo
 Los criterios para calibración y validación que usan los algoritmos de ML son usualmente la partición de la base de datos en dos: entrenamiento (train) y evaluación (test). Sin embargo, estos métodos no pueden ser aplicados en series de tiempo debido que estos criterios ignoran la secuencia temporal, lo cual es una característica importante de las series de tiempo. 
 
-En series de tiempo los modelos de ML emplean técnicas de separación de datos llamados backtesting or hindcasting
+En series de tiempo los modelos de ML emplean técnicas de separación de datos llamados **backtesting** or **hindcasting**.
 
 ### Por que los métodos clásicos de evaluación (separación) de un modelo ML no son aplicables en Series de Tiempo?
 Los métodos clásicos de evaluación de un modelo de ML asume que las observaciones son independientes del tiempo. Esta consideracion no es cierta en series de tiempo.
