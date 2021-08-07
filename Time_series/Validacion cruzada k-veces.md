@@ -13,7 +13,7 @@ A continuación se describen tres métodos de backtest de evaluación de series 
 #### Separación Train-Test (Train-Test split)
 Esta saparación de serie de tiempo consiste en establecer un punto de partición de la serie para obtener dos series, la primera serie de entrenamiento (train) antes del punto de partición y la segunda serie de evaluación (test) después del punto. Según la cantidad de observaciones (logitud de la serie), la separación puede ser de 50%-50%, 60%-40%, 70%-30% y otro.
 #### Múltiple separación Train-Test (Múltiple Train-Test splits)
-Consiste en repetir el proceso de separación de la serie varias veces. La múltiple separación de la serie en Train-test, permitirá tener varios pares train-test por tanto hacer el modelo de ML mas robusto.
+Consiste en repetir el proceso anterior de separación de la serie varias veces. La múltiple separación de la serie en train-test, permite tener varios pares train-test lo que resulta en modelo ML más robusto.
 Esta múltiple separación puede hacerse manualmente, repitiendo la separación de la serie en varios puntos; sin embargo, la librería scikit-learn provee una función para esto.
 ___Continua___
 ***Continua***
