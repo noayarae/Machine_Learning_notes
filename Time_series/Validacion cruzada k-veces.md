@@ -13,15 +13,17 @@ A continuación se describen tres métodos de backtest de evaluación de series 
 Esta saparación de serie de tiempo consiste en establecer un punto de partición de la serie para obtener dos series, la primera serie de entrenamiento (train) antes del punto de partición y la segunda serie de evaluación (test) después del punto. Según la cantidad de observaciones (logitud de la serie), la separación puede ser de 50%-50%, 60%-40%, 70%-30% y otro.
 #### Múltiple separación Train-Test (Múltiple Train-Test splits)
 Consiste en repetir el proceso anterior de separación de la serie varias veces. La múltiple separación de la serie en train-test, permite tener varios pares train-test lo que resulta en modelo ML más robusto.
+
 Esta múltiple separación puede hacerse manualmente, repitiendo la separación de la serie en varios puntos; sin embargo, la librería scikit-learn provee una función para esto.
 En esta separación, se debe especificar el numero de particiones a crear. Por ejmplo, en una serie de 100 observaciones, si se establece 2 particiones, la serie se dividirá en tres sub series. 
 - El primer entrenamiento será empleando las primeras 33 observaciones y la evaluación (test) usando las siguientes 33 observaciones.
 - El segundo entrenamiento será empleando las primeras 67 observaciones y la evaluación usando las siguientes 33 obs.
 - Entonces, en esta serie dos particiones implica dos entrenamientos.
-Primer entrenamiento: Train 33 obs, Test 33 obs.
-Segundo entrenamiento: Train 67 obs, test 33 obs.
 
+Primer entrenamiento: Train 33 obs, Test 33 obs.
 <img src="img/Validacion_m1.png" width = "300">
+
+Segundo entrenamiento: Train 67 obs, test 33 obs.
 <img src="img/Validacion_m2.png" width = "300">
 
 En esta modalidad, generalmente la longitud de la evaluación (test size) se mantiene constante para tenener un buena consistencia al momento de comparar y/o promediar la evaluación del modelo. Lo que cambia es la longitud de las obs de entrenamiento.
