@@ -20,6 +20,8 @@ En esta separación, se debe especificar el numero de particiones a crear. Por e
 Primer entrenamiento: Train 33 obs, Test 33 obs.
 Segundo entrenamiento: Train 67 obs, test 33 obs.
 
+<img src="img/validacion_m1.png" width = "300">
+
 En esta modalidad, generalmente la longitud de la evaluación (test size) se mantiene constante para tenener un buena consistencia al momento de comparar y/o promediar la evaluación del modelo. Lo que cambia es la longitud de las obs de entrenamiento.
 Alternativamente, la longitud de observaciones también pordrian mantenerse constante, es decir usar solo las ultimas 33 observaciones para prdecir las siguientes 33 observaciones, en el ejemplo anterior.
 
