@@ -21,9 +21,11 @@ En esta separación, se debe especificar el numero de particiones a crear. Por e
 - Entonces, en esta serie dos particiones implica dos entrenamientos.
 
 Primer entrenamiento: Train 33 obs, Test 33 obs.
+
 <img src="img/Validacion_m1.png" width = "300">
 
 Segundo entrenamiento: Train 67 obs, test 33 obs.
+
 <img src="img/Validacion_m2.png" width = "300">
 
 En esta modalidad, generalmente la longitud de la evaluación (test size) se mantiene constante para tenener un buena consistencia al momento de comparar y/o promediar la evaluación del modelo. Lo que cambia es la longitud de las obs de entrenamiento.
