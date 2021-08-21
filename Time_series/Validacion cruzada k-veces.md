@@ -6,6 +6,7 @@ Los métodos clásicos de evaluación de un modelo de ML asume que las observaci
 En series de tiempo no se pueden separar aleatoriamente la data en data observaciones de entrenamiento y evaluacion, sino debemos considerar la separación de observaciones manteniendo la secuencia de las observaciones en el tiempo.
 
 En el pronóstico de series de tiempo, esta evaluación de modelos sobre datos históricos se denomina **backtesting**. En algunos dominios de series de tiempo, como la meteorología, esto se denomina predicción retrospectiva, en lugar de predicción.
+<img src="img/serie_de_tiempo.png" width = "300">
 
 A continuación se describen tres métodos de backtest de evaluación de series de tiempo en ML: Separación Train-Test, múltiple separación Train-Test, y validación progresiva.
 #### Separación Train-Test (Train-Test split)
@@ -21,6 +22,7 @@ Primer entrenamiento: Train 33 obs, Test 33 obs.
 Segundo entrenamiento: Train 67 obs, test 33 obs.
 
 <img src="img/Validacion_m1.png" width = "300">
+<img src="img/Validacion_m2.png" width = "300">
 
 En esta modalidad, generalmente la longitud de la evaluación (test size) se mantiene constante para tenener un buena consistencia al momento de comparar y/o promediar la evaluación del modelo. Lo que cambia es la longitud de las obs de entrenamiento.
 Alternativamente, la longitud de observaciones también pordrian mantenerse constante, es decir usar solo las ultimas 33 observaciones para prdecir las siguientes 33 observaciones, en el ejemplo anterior.
