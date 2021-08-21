@@ -13,21 +13,34 @@ Esta saparación de serie de tiempo consiste en establecer un punto de partició
 #### Múltiple separación Train-Test (Múltiple Train-Test splits)
 Consiste en repetir el proceso anterior de separación de la serie varias veces. La múltiple separación de la serie en train-test, permite tener varios pares train-test lo que resulta en modelo ML más robusto.
 Esta múltiple separación puede hacerse manualmente, repitiendo la separación de la serie en varios puntos; sin embargo, la librería scikit-learn provee una función para esto.
-___Continua___
-***Continua***
+En esta separación, se debe especificar el numero de particiones a crear. Por ejmplo, en una serie de 100 observaciones, si se establece 2 particiones, la serie se dividirá en tres sub series. 
+- El primer entrenamiento será empleando las primeras 33 observaciones y la evaluación (test) usando las siguientes 33 observaciones.
+- El segundo entrenamiento será empleando las primeras 67 observaciones y la evaluación usando las siguientes 33 obs.
+- Entonces, en esta serie dos particiones implica dos entrenamientos.
+Primer entrenamiento: Train 33 obs, Test 33 obs.
+Segundo entrenamiento: Train 67 obs, test 33 obs.
+
+En esta modalidad, generalmente la longitud de la evaluación (test size) se mantiene constante para tenener un buena consistencia al momento de comparar y/o promediar la evaluación del modelo. Lo que cambia es la longitud de las obs de entrenamiento.
+Alternativamente, la longitud de observaciones también pordrian mantenerse constante, es decir usar solo las ultimas 33 observaciones para prdecir las siguientes 33 observaciones, en el ejemplo anterior.
+
 
 #### Validación progresiva (Walk-forward)
 Se debe establecer dos parametros:
-- El mínimo número de observaciones. Determina el mínimo número de oservaciones en el modelo de entrenamiento (nmin).
-- La ventana de desplazamiento o expansión. Determina si el modelo será entrenado en los datos disponibles o solo en las obsevaciones más recientes.
+- El mínimo número de observaciones para el entrenamiento (nmin). En algunos casos esto puede ser difícil, sobre todo en registros cortos.
+- El tipo de ventana (desplazamiento o expansión). Determina si el modelo será entrenado en los datos disponibles (ventana en expansión) o solo en las obsevaciones más recientes (ventana fija de desplazamiento).
 
-Estos parametros se procesasn como sigue:
-- Empezando del inicio de la serie, se toma mínimo número de observaciones (ventana de entrenamiento) para entrenar el primer modelo de ML (v1, v2,...,v_nmin).
-- El modelo hace la predicción del siguiente valor de la serie (es decir del valor v_nmin+1)
+Estos parametros se procesan como sigue:
+- Empezando del inicio de la serie, se toma mínimo número de observaciones (ventana o serie de entrenamiento) para entrenar el primer modelo de ML. Por ejemplo, en una serie de 75 observaciones, se establece el mínimo número de observaciones en 50, la serie de entrenamiento es: v1, v2,...,v50.
+- El modelo hace la predicción del siguiente valor de la serie (es decir del valor v51)
 - La prediccion es comparada con el valor conocido.
-- La ventana se amplia en una unidad y luego se repite el proceso
+- Se continúa con la siguiente predicción. 
+- En el caso de ventana fija, ésta se desplaza en una unidad y la nueva serie de entrenamiento es: v2, v3,...,v51, para predecir el siguiente valor de la serie V52. 
+- Este valor (V52) se compara con el valor conocido. El proceso se repite hasta predecir el último valor de la serie V75.
+- En el caso de ventana en expansión, en la segunda predicción, la ventana se amplia en una unidad. Entonces la nueva serie de entrenamiento es: v1,v2,v3,...,v51, para predecir el valor de la serie V52.
+- El valor (V52) se compara con el valor conocido. El proceso se repite, ampliando la ventana, hasta predecir el último valor de la serie V75.
 
-De este modo, este método considera la ampliacion de la serie de entrenamiento en una unidad de tiempo en cada repetición. Este método toma el nombre de Walk-forward, walk-forward validation o Rolling-window Analysis o Rolling forecast.
+
+De este modo, este método considera la ampliacion de la serie de entrenamiento en una unidad de tiempo en cada repetición. Este método toma el nombre de "Walk-forward", "walk-forward validation" o "Rolling-window Analysis" o "Rolling forecast".
 
 Este método genera más modelos de entrenamiento con la desventaja de incrementar el costo computacional. Este método contribuye a un modelo ML mucho més robusto. Se debe prestar atención al ancho de la ventana y al tipo de ventana, estos podrían ajustarse para idear un ancho de prueba de tal forma sea significativamente menos costoso desde el punto de vista computacional.
 
