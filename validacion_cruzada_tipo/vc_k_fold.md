@@ -16,4 +16,8 @@ from xgboost import XGBRegressor
 import xgboost as xgb
 ```
 
+```
+0.98415
+```
+
 
