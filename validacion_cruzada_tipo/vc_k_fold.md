@@ -21,3 +21,8 @@ import xgboost as xgb
 ```
 
 
+```
+from xgboost import XGBRegressor
+import xgboost as xgb
+```
+
