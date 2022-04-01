@@ -11,9 +11,9 @@ La validación cruzada es un procedimiento de re-muestreo de la BD que se usa pa
 observación se da la una oportunidad de participar en el entrenamiento del modelo y (k-1) veces en la evaluacion del modelo
 - La bondad del modelo es igual al promedio de los k scores o a un muestreo de ellos.
 
-'''python
+```python
 from xgboost import XGBRegressor
 import xgboost as xgb
-'''
+```
 
 
