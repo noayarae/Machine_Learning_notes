@@ -22,7 +22,7 @@ El valor de k debe elegirse con criterio. Un valor no adecuado de k puede result
 - As k gets larger, the difference in size between the training set and the resampling subsets gets smaller. As this difference decreases, the bias of the technique becomes smaller (Ver más).
 
 Variantes de la validación cruzada
-- ***Train/Test Split***. Esto es cuando la BD es dividido en solo 2 grupos. Esto se debe dar en casos muy extremos. 
+- **Train/Test Split**. Esto es cuando la BD es dividido en solo 2 grupos. Esto se debe dar en casos muy extremos. 
 - **Leave-one-out cross-validation**. (k = n) Esto se establece en caso que la BD sea muy pequeña.
 - **Stratified**. Estratificado. Generalmente en modelos de clasificación. Esto garantiza la misma proporcion de registros con las categorias de la BD tanto en el grupo de entrenamiento como evaluación. Por ejm: Si se tiene 100 observaciones de los cuales 30% corresponden a la categoría "Yes" y 70% a "No", al establcer la CV con k=5, la muestra de entrenamiento tendrá 80 observacion aleatoriamente seleccionadas con 56 "Yes" y 24 "No" y la muestra de evaluación tendrá 20 observaciones con 14 "Yes" y 6 "No"
 - **Repeated**. El procedimiento de validación cruzada de k veces se repite n veces. La BD se baraja antes de cada repetición, lo que da como resultado una división diferente de la muestra/proceso.
