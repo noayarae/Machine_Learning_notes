@@ -9,9 +9,9 @@ En el pronóstico de series de tiempo, esta evaluación de modelos sobre datos h
 <img src="img/serie_de_tiempo.png" width = "300">
 
 A continuación se describen tres métodos de backtest de evaluación de series de tiempo en ML: (1) Separación Train-Test, (2) múltiple separación Train-Test, y (3) validación progresiva.
-#### Separación Train-Test (Train-Test split)
+#### (1) Separación Train-Test (Train-Test split)
 Esta saparación de serie de tiempo consiste en establecer un punto de partición de la serie para obtener dos series, la primera serie de entrenamiento (train) antes del punto de partición y la segunda serie de evaluación (test) después del punto. Según la cantidad de observaciones (logitud de la serie), la separación puede ser de 50%-50%, 60%-40%, 70%-30% y otro.
-#### Múltiple separación Train-Test (Múltiple Train-Test splits)
+#### (2) Múltiple separación Train-Test (Múltiple Train-Test splits)
 Consiste en repetir el proceso anterior de separación de la serie varias veces. La múltiple separación de la serie en train-test, permite tener varios pares train-test lo que resulta en modelo ML más robusto.
 
 Esta múltiple separación puede hacerse manualmente, repitiendo la separación de la serie en varios puntos; sin embargo, la librería scikit-learn provee una función para esto.
@@ -32,7 +32,7 @@ Alternativamente, la longitud de observaciones también pordrian mantenerse cons
 <img src="img/Validacion_m2.png" width = "300">
 
 
-#### Validación progresiva (Walk-forward)
+#### (3) Validación progresiva (Walk-forward)
 Se debe establecer dos parametros:
 - El mínimo número de observaciones para el entrenamiento (nmin). En algunos casos esto puede ser difícil, sobre todo en registros cortos.
 - El tipo de ventana (desplazamiento o expansión). Determina si el modelo será entrenado en los datos disponibles (ventana en expansión) o solo en las obsevaciones más recientes (ventana fija de desplazamiento).
