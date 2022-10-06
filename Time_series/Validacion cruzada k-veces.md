@@ -8,7 +8,7 @@ En series de tiempo no se pueden separar aleatoriamente la data en data observac
 En el pronóstico de series de tiempo, esta evaluación de modelos sobre datos históricos se denomina **backtesting**. En algunos dominios de series de tiempo, como la meteorología, esto se denomina predicción retrospectiva, en lugar de predicción.
 <img src="img/serie_de_tiempo.png" width = "300">
 
-A continuación se describen tres métodos de backtest de evaluación de series de tiempo en ML: Separación Train-Test, múltiple separación Train-Test, y validación progresiva.
+A continuación se describen tres métodos de backtest de evaluación de series de tiempo en ML: (1) Separación Train-Test, (2) múltiple separación Train-Test, y (3) validación progresiva.
 #### Separación Train-Test (Train-Test split)
 Esta saparación de serie de tiempo consiste en establecer un punto de partición de la serie para obtener dos series, la primera serie de entrenamiento (train) antes del punto de partición y la segunda serie de evaluación (test) después del punto. Según la cantidad de observaciones (logitud de la serie), la separación puede ser de 50%-50%, 60%-40%, 70%-30% y otro.
 #### Múltiple separación Train-Test (Múltiple Train-Test splits)
